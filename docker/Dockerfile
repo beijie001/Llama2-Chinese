@@ -9,7 +9,7 @@ FROM $DOCKER_FROM as base
 #Workdir
 WORKDIR /root/Llama2-Chinese
 
-ARG BRANCH="docker"
+ARG BRANCH="beijie"
 
 # 从git上克隆llama2-chinese仓库
 RUN git clone https://github.com/beijie001/Llama2-Chinese.git /root/Llama2-Chinese && git checkout $BRANCH
