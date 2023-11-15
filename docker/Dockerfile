@@ -39,8 +39,11 @@ RUN apt-get update && apt-get install -y \
     && apt-get install -y git-lfs
 RUN git lfs install
 
-RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
-RUN cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
+# RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
+# RUN cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
+RUN pip install huggingface_hub -i https://mirrors.aliyun.com/pypi/simple && \
+    wget -O model_download.py http://61.133.217.142:20800/download/model_download.py && \
+    python3 model_download.py --mirror --repo_id FlagAlpha/Llama2-Chinese-7b-Chat
 
 #开启7860端口
 EXPOSE 7860
