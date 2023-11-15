@@ -33,6 +33,7 @@ RUN pip3 uninstall -y auto-gptq && \
 # RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
 RUN apt-get update && apt-get install -y \
     wget \
+    curl \
     && apt-get install -y git \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
     && apt-get install -y git-lfs \
