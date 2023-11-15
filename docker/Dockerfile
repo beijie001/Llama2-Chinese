@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     && apt-get install -y git \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
-    && apt-get install -y git-lfs \
+    && apt-get install -y git-lfs
 RUN git lfs install
 
 RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
