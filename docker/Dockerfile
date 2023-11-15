@@ -30,8 +30,12 @@ RUN pip3 uninstall -y auto-gptq && \
 # 直接clone会卡死，采用两步进行克隆
 # RUN  git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
 # RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat && cd Llama2-Chinese-7b-Chat && git lfs pull && cd .. 
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
-RUN sudo apt-get install git-lfs
+# RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+RUN apt-get update && apt-get install -y \
+    wget \
+    && apt-get install -y git \
+    && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
+    && apt-get install -y git-lfs \
 RUN git lfs install
 
 RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat
