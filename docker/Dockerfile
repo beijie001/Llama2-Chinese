@@ -49,4 +49,5 @@ RUN pip install huggingface_hub -i https://mirrors.aliyun.com/pypi/simple && \
 EXPOSE 7860
 
 #设置启动命令
-ENTRYPOINT ["python3", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Llama2-Chinese-7b-Chat/"]
+ENTRYPOINT ["python3", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/dataroot/models/FlagAlpha/Llama2-Chinese-7b-Chat/"]
+# python3 examples/chat_gradio.py --model_name_or_path /root/Llama2-Chinese/dataroot/models/FlagAlpha/Llama2-Chinese-7b-Chat/
